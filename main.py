@@ -1,12 +1,15 @@
+import os
+
 import pywinctl
 import pyautogui
 import pyperclip
 import keyring
 
 
-SIGNIN_BUTTON_PATH = "images/signin_button.png"
-EMAIL_TEXTBOX_PATH = "images/email_textbox.png"
-PASSWORD_TEXTBOX_PATH = "images/password_textbox.png"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SIGNIN_BUTTON_PATH = os.path.join(BASE_DIR, "images", "signin_button.png")
+EMAIL_TEXTBOX_PATH = os.path.join(BASE_DIR, "images", "email_textbox.png")
+PASSWORD_TEXTBOX_PATH = os.path.join(BASE_DIR, "images", "password_textbox.png")
 EMAIL = keyring.get_password("citrix-login", "email")
 PASSWORD = keyring.get_password("citrix-login", "password")
 

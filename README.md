@@ -27,3 +27,26 @@ python -m keyring set citrix-login password
 ```bash
 python main.py
 ```
+
+## Optionally assign keyboard shortcut
+
+You can run this script with a global keyboard shortcut using Automator and macOS Services:
+
+1. **Create a Quick Action:**
+   - Open **Automator** and select **Quick Action**.
+   - Set "Workflow receives" to "no input" in "any application".
+   - Add a **Run Shell Script** action.
+   - Enter the following command, replacing the Python path if needed:
+     ```bash
+     /path/to/.pyenv/versions/3.x.x/bin/python /path/to/automate-citrix-login/main.py
+     ```
+     *(Find your Python path with `pyenv which python` if using pyenv.)*
+   - Save the Quick Action (e.g., "Run Citrix Login").
+
+2. **Assign a Keyboard Shortcut:**
+   - Open **System Settings** > **Keyboard** > **Keyboard Shortcuts**.
+   - Go to **Services**.
+   - Find your Quick Action under "General" or "Services".
+   - Add a shortcut, e.g., `Control + Option + Command + L` (`⌃⌥⌘L`).
+
+Now, pressing your chosen shortcut will run the Citrix login script
